@@ -1,19 +1,19 @@
 variable "aws_access_key" {
-    type = string
-    description = "AWS Access key"
-    sensitive = true
+  type        = string
+  description = "AWS Access key"
+  sensitive   = true
 }
 
 variable "aws_secret_key" {
-    type = string
-    description = "AWS Secret key"
-    sensitive = true
+  type        = string
+  description = "AWS Secret key"
+  sensitive   = true
 }
 
 variable "aws_region" {
-    type = string
-    description = "AWS Region"
-    default = "eu-west-1"
+  type        = string
+  description = "AWS Region"
+  default     = "eu-west-1"
 }
 
 
@@ -29,10 +29,10 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-variable "vpc_public_subnet1_cidr_block" {
-  type        = string
+variable "vpc_public_subnets_cidr_block" {
+  type        = list(string)
   description = "CIDR Block for Subnet 1 in VPC"
-  default     = "10.0.0.0/24"
+  default     = ["10.0.0.0/24", "10.0.1.0/24"]
 }
 
 variable "map_public_ip_on_launch" {
